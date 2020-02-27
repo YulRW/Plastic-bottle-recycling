@@ -1,0 +1,28 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/login/login",
+        "pages/getInfo/getInfo",
+        "pages/coupon/coupon",
+        "pages/map/map",
+        "pages/card/card",
+        "pages/bindCard/bindCard",
+        "pages/exchange/exchange",
+        "pages/myInfo/myInfo",
+        "pages/findBox/findBox",
+        "pages/score/score",
+        "pages/logs/logs"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#00a0ae",
+        "navigationBarTitleText": "首页",
+        "navigationBarTextStyle": "white"
+    },
+    "permission": {
+        "scope.userLocation": {
+            "desc": "用户找箱子持续后台定位" 
+        }
+    },
+    "sitemapLocation": "sitemap.json"
+}

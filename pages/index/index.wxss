@@ -1,0 +1,128 @@
+
+
+.header {
+    width: 100vw;
+    background-color: #00a0ae;
+}
+
+.header_text {
+    color: white;
+    font-weight: bold;
+    font-size: 40rpx;
+    padding-bottom: 15rpx;
+}
+
+.text_sec {
+    color: white;
+    font-size: 30rpx;
+}
+
+.content_header {
+    padding-top: 20rpx;
+    padding-left: 40rpx;
+}
+
+.header_flex {
+    padding-top: 40rpx;
+    padding-bottom: 30rpx;
+    /* 布局方式 */
+    display: flex;
+    /* 对齐方式 */
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+}
+
+.select {
+    margin-top: 60rpx;
+    /* 布局方式 */
+    display: flex;
+    /* 对齐方式 */
+    justify-content: space-around;
+    align-items: center;
+}
+
+.select>view {
+    display: flex;
+    padding: 30rpx 0;
+    text-align: left;
+    width: 45vw;
+    color: black;
+    background-color: white;
+}
+
+.select>view>view>view {
+    margin-left: 30rpx;
+}
+
+.select_sec {
+    padding-top: 15rpx;
+    font-size: 25rpx;
+}
+
+.select_img {
+    width: 70rpx;
+    margin-top: 20rpx;
+    margin-left: 30rpx;
+}
+
+.ad {
+    margin-top: 30rpx;
+}
+
+.ad image{
+    width: 100vw;
+}
+
+.scan {
+    text-align: center;
+    margin-top: 30vh;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #00a0ae;
+    border-radius: 50% 50%;
+    border: 22rpx white solid;
+    width: 150rpx;
+    height: 150rpx;
+    line-height: 150rpx;
+    color: white;
+    font-size: 45rpx;
+}
+
+.clean_bottom{
+    height: 120rpx;
+}
+
+.bottom {
+    /* position: fixed; */
+    display: flex;
+    /* 对齐方式 */
+    height: 120rpx;
+    line-height: 120rpx;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+}
+
+.bottom view{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    /* background-color: black; */
+}
+
+.bottom:before{
+    content: "|";
+    position: absolute;
+    color: #e6e2e7;
+    font-size: 60rpx;
+    left: 50vw;
+}
+
+.fixed{
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+}

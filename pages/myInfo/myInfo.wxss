@@ -1,0 +1,136 @@
+.bg {
+    background-color: #e6e2e7;
+    height: 100vh;
+}
+
+.header {
+    border: 1rpx transparent solid;
+    width: 100vw;
+    background-color: #00a0ae;
+}
+
+.userInfo{
+    padding-left: 80rpx;
+    display: flex;
+
+    
+}
+
+.avout{
+    flex: 3;
+}
+
+.avatar{
+    border-radius: 50% 50%;
+    overflow: hidden;
+    font-size: 0;
+    width: 150rpx;
+    
+}
+
+.avatar image{
+    width: 150rpx;
+    height: 150rpx;
+}
+
+.userText{
+    flex: 7;
+    color: white;
+}
+
+.userText>view:first-child{
+    font-size: 40rpx;
+    margin: 10rpx 0;
+}
+
+.userText>view:last-child{
+    font-size: 30rpx;
+    line-height: 30rpx;
+}
+
+.clean{
+    padding:10rpx 0 ;
+}
+
+.content{
+    display: block;
+    margin: 0 auto;
+    margin-top: 25rpx;
+    background-color: #ffffff;
+    width: 95vw;
+    border: 1px solid #e6e2e7;
+    border-radius: 15rpx;
+}
+
+.in-content{
+    width: 85vw;
+    margin: 0 auto;
+    margin-top: 10rpx;
+    background-color: #ffffff;
+}
+
+.item{
+    display: flex;
+    padding: 30rpx 0 ;
+
+    border-bottom: #e4e4e4 1px solid;
+
+}
+
+.item text{
+    color: #dd621a;
+}
+
+.item>view:first-child{
+    flex: 3;    
+    font-size: 35rpx;
+}
+
+.item>view:last-child{
+    flex: 7;
+    font-size: 27rpx;
+    text-align: right;
+    
+}
+
+.scan {
+    margin-top: 45rpx;
+    text-align: center;
+}
+
+.btn {
+    display: inline-block;
+    position: relative;
+    background-color: #00a0ae;
+    border-radius: 50% 50%;
+    border: 22rpx white solid;
+    width: 150rpx;
+    height: 150rpx;
+    line-height: 150rpx;
+    color: white;
+}
+
+.btn image{
+    position: absolute;
+    width: 100rpx;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+
+}
+
+.tip{
+    margin-top: 22rpx;
+    text-align: center;
+    color: #dd621a;
+    font-size: 25rpx;
+    letter-spacing: 5rpx;
+}
+
+.loginBtn{
+    margin: 30rpx 60rpx;
+    margin-top: 70rpx;
+}
+

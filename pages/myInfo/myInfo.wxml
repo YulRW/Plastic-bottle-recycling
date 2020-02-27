@@ -1,0 +1,91 @@
+<view class="bg">
+
+    <!-- 个人信息展示及占位 -->
+    <view class="header">
+
+
+        <!-- 用户信息卡 -->
+        <block wx:if="{{isLogin}}">
+
+            <view class="userInfo">
+                <view class="avout">
+                    <view class="avatar">
+                        <!-- 头像 -->
+                        <image src="{{userInfo.avatarUrl}}" mode="widthFix"></image>
+                    </view>
+                </view>
+                <view class="userText">
+                    <!-- 个人信息 -->
+                    <!-- 用户名 -->
+                    <view>{{userInfo.nickName}}</view>
+                    <!-- 手机号 -->
+                    <view>{{userData.telephoneNumber}}</view>
+
+                </view>
+            </view>
+
+        </block>
+
+        <block wx:else>
+            <button bindtap="login" class="loginBtn">点击登录</button>
+        
+        </block>
+
+
+
+
+
+        <view class="clean"></view>
+    </view>
+
+    <!-- 用户详细相关信息 -->
+    <view class="content">
+        <view class="in-content">
+            <view class="item">
+                <view>积分累计</view>
+                <view>当前积分为
+                    <text>{{userData.score}}分 </text>
+                </view>
+            </view>
+            <view class="item">
+                <view>瓶子累积</view>
+                <view>当前已经投了
+                    <text>{{userDataA.bottleCount}}个 </text>瓶子</view>
+
+            </view>
+            <view class="item">
+                <view>碳排放量</view>
+                <view>你已经减少碳排放
+                    <text>{{userDataA.gCount}} </text>克</view>
+
+            </view>
+            <view class="item">
+                <view>兑换记录</view>
+                <view>2019年10月21日充值了
+                    <text>{{userDataA.exchangeCount}} </text>块羊城通</view>
+            </view>
+            <view class="item">
+
+                <view>联系客服</view>
+                <view>打这个电话
+                    <text>{{userDataA.tel}} </text>
+                </view>
+            </view>
+
+
+        </view>
+    </view>
+
+
+    <!-- ***人脸识别*** -->
+    <view class="scan" bindtap="faceLogin">
+        <view class="btn">
+            <image src="../../img/avatarS.png" mode="widthFix"></image>
+        </view>
+
+    </view>
+    <!-- tip小提示 -->
+    <view class="tip">人脸验证，领积分就不用手机了</view>
+
+
+</view>
