@@ -12,15 +12,26 @@ Page({
         inputAdd: "地址",
         //地址列表
         addList: [],
-        //回收箱地址
-        find_title: "A204回收箱",
-        //具体地址
-        find_add: "在广州大学城广东工业大学1号教学楼201室旁",
-        //初始坐标(纬度/经度)
-        latitude: 23.0374000000,
-        longitude: 113.3972300000,
-        //定位精确度
-        accuracy: '',
+
+        //底部地址信息
+        btmData: {
+            //回收箱地址
+            find_title: "A204回收箱",
+            //具体地址
+            find_add: "在广州大学城广东工业大学1号教学楼201室旁",
+            //回收箱状态
+            status: 2
+
+        },
+
+        mapData: {
+            //初始坐标(纬度/经度)
+            latitude: 23.0374000000,
+            longitude: 113.3972300000,
+            //定位精确度
+            accuracy: '',
+        },
+
         //样式
         b_width: "",
         //当前信息
@@ -30,18 +41,24 @@ Page({
             "lng": "113.39494",
             "lat": "23.03857",
             "box_name": "C.A.T 总部",
+            'box_title': 'A205回收箱',
             "box_image": "/img/BOX.png",
+            status: 1
         }, {
             "lng": "113.39454",
             "lat": "23.04002",
             "box_name": "广东工业大学大学城校区-教学六号楼",
+            'box_title': 'A706回收箱',
             "box_image": "/img/BOX.png",
+            status: 2
 
         }, {
             "lng": "113.39871",
             "lat": "23.03675",
             "box_name": "广东工业大学大学城校区-工学三号馆",
+            'box_title': 'A301回收箱',
             "box_image": "/img/BOX.png",
+            status: 1
         }],
         //标记名称
         box_name: "",
@@ -94,33 +111,33 @@ Page({
             //经度
             longitude: point.lng,
             //标注点名
-            title:point.box_name,
+            title: point.box_name,
             //显示层级
             // zIndex:num
             //图标地址
             iconPath: "/img/dp.png",
             //旋转角度
-            rotate:0,
+            rotate: 0,
             //透明度
-            alpha:1,
+            alpha: 1,
             //图标宽度和高度
             width: 30,
             height: 30,
             name: point.box_name || '',
-            label:{
-                content:""
+            label: {
+                content: ""
             },
-            callout:{
+            callout: {
                 content: point.box_name,
                 color: "#00a0ae",
-                fontSize:"30rpx",
-                borderRadius:"15rpx",
-                borderWidth:"6rpx",
-                borderColor:"black",
-                bgColor:"white",
-                padding:"15rpx",
-                display:"BYCLICK",
-                textAlign:"center",
+                fontSize: "30rpx",
+                borderRadius: "15rpx",
+                borderWidth: "6rpx",
+                borderColor: "black",
+                bgColor: "white",
+                padding: "15rpx",
+                display: "BYCLICK",
+                textAlign: "center",
             }
         };
         return marker;
@@ -129,12 +146,16 @@ Page({
     /**
      * 点击marker
      */
-    markertap (boxitem) {
-        console.log("点击盒子获取",boxitem);
+    markertap(boxitem) {
+        console.log("点击盒子获取", boxitem);
         this.setData({
-            box_image: boxitem.markerId.box_image,
-            box_name: boxitem.markerId.box_name,
+            'btmData.find_title': boxitem.markerId.box_title,
+            'btmData.find_add': boxitem.markerId.box_name,
+            'btmData.status': boxitem.markerId.status,
+            'btmData.lng': boxitem.markerId.lng,
+            'btmData.lat': boxitem.markerId.lat,
         })
+
     },
     //获取搜索输入框数据并搜索
     getAdd(e) {
@@ -185,23 +206,24 @@ Page({
     // }
     reLocation(data) {
         if (data.detail.num === undefined) {
-            data = this.localtionNow;
+            this.setData({
+                'mapData.latitude': this.data.btmData.lat,
+                'mapData.longitude': this.data.btmData.lng,
+            })
         } else {
             this.localtionNow = data.detail.num;
             data = this.localtionNow;
-
+            this.setData({
+                'btmData.find_title': data.title,
+                'btmData.find_add': data.address,
+                'btmData.status': 0,
+                'mapData.latitude': data.location.lat,
+                'mapData.longitude': data.location.lng,
+            })
         }
-        console.log("获取到的", data);
-        this.setData({
-            find_title: data.title,
-            find_add: data.address,
-            latitude: data.location.lat,
-            longitude: data.location.lng,
-        })
 
     },
     myLocal() {
-        console.log("重新定位");
         // 定位中...
         wx.showLoading({
             title: "定位中",
@@ -223,9 +245,9 @@ Page({
                 let accuracy = res.accuracy;
                 //设置返回信息
                 this.setData({
-                    longitude: longitude,
-                    latitude: latitude,
-                    accuracy: accuracy
+                    'mapData.longitude': longitude,
+                    'mapData.latitude': latitude,
+                    'mapData.accuracy': accuracy
                 })
             },
             //定位失败回调
@@ -243,35 +265,4 @@ Page({
         })
 
     },
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady: function() {},
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow: function() {},
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide: function() {
-
-    },
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload: function() {},
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh: function() {},
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom: function() {},
-    /**
-     * 用户点击右上角分享
-     */
-    onShareAppMessage: function() {}
-
 })

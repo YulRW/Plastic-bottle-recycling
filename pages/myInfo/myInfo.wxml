@@ -1,12 +1,9 @@
-<view class="bg">
+<view class="bg iconfont">
 
     <!-- 个人信息展示及占位 -->
     <view class="header">
-
-
         <!-- 用户信息卡 -->
         <block wx:if="{{isLogin}}">
-
             <view class="userInfo">
                 <view class="avout">
                     <view class="avatar">
@@ -20,72 +17,87 @@
                     <view>{{userInfo.nickName}}</view>
                     <!-- 手机号 -->
                     <view>{{userData.telephoneNumber}}</view>
-
                 </view>
             </view>
-
         </block>
-
         <block wx:else>
             <button bindtap="login" class="loginBtn">点击登录</button>
-        
         </block>
-
-
-
-
-
         <view class="clean"></view>
     </view>
 
     <!-- 用户详细相关信息 -->
+    <view class="content-title">累计</view>
     <view class="content">
         <view class="in-content">
-            <view class="item">
+            <view class="item icon1">
                 <view>积分累计</view>
                 <view>当前积分为
                     <text>{{userData.score}}分 </text>
                 </view>
             </view>
-            <view class="item">
+            <view class="item icon2">
                 <view>瓶子累积</view>
-                <view>当前已经投了
+                <view>当前已回收瓶子为
                     <text>{{userDataA.bottleCount}}个 </text>瓶子</view>
-
             </view>
-            <view class="item">
-                <view>碳排放量</view>
-                <view>你已经减少碳排放
-                    <text>{{userDataA.gCount}} </text>克</view>
+        </view>
+    </view>
 
-            </view>
-            <view class="item">
-                <view>兑换记录</view>
-                <view>2019年10月21日充值了
-                    <text>{{userDataA.exchangeCount}} </text>块羊城通</view>
-            </view>
-            <view class="item">
 
+    <view class="content-title">历史</view>
+    <view class="content">
+        <view class="in-content">
+            <view class="item icon3" data-url="/pages/myInfo/historyBottle/historyBottle" bindtap="toPage">
+                <view>投瓶历史</view>
+                <view class="arrow">
+                </view>
+            </view>
+            <view class="item icon4" data-url="/pages/myInfo/historyExchange/historyExchange" bindtap="toPage">
+                <view>兑换历史</view>
+                <view class="arrow"> 
+                </view>
+            </view>
+        </view>
+    </view>
+
+
+    <view class="content-title">服务</view>
+    <view class="content">
+        <view class="in-content">
+            <view class="item icon5 " data-url="/pages/myInfo/faceCheck/faceCheck" bindtap="toPage">
+                <view>人脸验证</view>
+                <view class="arrow">
+                    <text>未完成</text>
+                </view>
+            </view>
+            <view class="item icon6" data-url="/pages/myInfo/aboutAs/aboutAs" bindtap="toPage">
+                <view>关于我们</view>
+                <view class="arrow">
+                </view>
+            </view>
+            <view class="item icon7">
                 <view>联系客服</view>
                 <view>打这个电话
                     <text>{{userDataA.tel}} </text>
                 </view>
             </view>
-
-
         </view>
     </view>
 
 
+
+
+
     <!-- ***人脸识别*** -->
-    <view class="scan" bindtap="faceLogin">
+    <!-- <view class="scan" bindtap="faceLogin">
         <view class="btn">
             <image src="../../img/avatarS.png" mode="widthFix"></image>
         </view>
 
-    </view>
+    </view> -->
     <!-- tip小提示 -->
-    <view class="tip">人脸验证，领积分就不用手机了</view>
+    <!-- <view class="tip">人脸验证，领积分就不用手机了</view> -->
 
 
 </view>

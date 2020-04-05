@@ -1,6 +1,9 @@
 {
     "pages": [
         "pages/index/index",
+        "pages/web/web",
+        "pages/shopping/shopping",
+        "pages/shopping/goods/goods",
         "pages/login/login",
         "pages/getInfo/getInfo",
         "pages/coupon/coupon",
@@ -8,6 +11,13 @@
         "pages/card/card",
         "pages/bindCard/bindCard",
         "pages/exchange/exchange",
+        "pages/myInfo/historyBottle/historyBottle",
+        "pages/myInfo/aboutAs/companyCapacity/companyCapacity",
+        "pages/myInfo/aboutAs/companyLoc/companyLoc",
+        "pages/myInfo/aboutAs/weChatOfficial/weChatOfficial",
+        "pages/myInfo/historyExchange/historyExchange",
+        "pages/myInfo/aboutAs/aboutAs",
+        "pages/myInfo/faceCheck/faceCheck",
         "pages/myInfo/myInfo",
         "pages/findBox/findBox",
         "pages/score/score",

@@ -11,6 +11,7 @@
 		"minified": true,
 		"newFeature": true,
 		"coverView": true,
+		"nodeModules": true,
 		"autoAudits": false,
 		"checkInvalidKey": true,
 		"checkSiteMap": true,
@@ -19,8 +20,7 @@
 			"ignore": [],
 			"disablePlugins": [],
 			"outputPath": ""
-		},
-		"nodeModules": true
+		}
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.9.4",
@@ -58,16 +58,36 @@
 			"list": [
 				{
 					"id": -1,
-					"name": "pages/map/map",
-					"pathName": "pages/map/map",
+					"name": "pages/shopping/shopping",
+					"pathName": "pages/shopping/shopping",
 					"query": "",
 					"scene": null
 				},
 				{
 					"id": -1,
-					"name": "pages/index/index",
-					"pathName": "pages/index/index",
-					"query": "name=10",
+					"name": "pages/myInfo/aboutAs/companyLoc/companyLoc",
+					"pathName": "pages/myInfo/aboutAs/companyLoc/companyLoc",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/myInfo/aboutAs/aboutAs",
+					"pathName": "pages/myInfo/aboutAs/aboutAs",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/myInfo/aboutAs/companyLoc/companyLoc",
+					"pathName": "pages/myInfo/aboutAs/companyLoc/companyLoc",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/web/web",
+					"pathName": "pages/web/web",
 					"scene": null
 				}
 			]

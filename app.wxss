@@ -1,4 +1,8 @@
 /**app.wxss**/
+
+/* 引入阿里巴巴字体UI */
+@import "/assets/font/iconfont.wxss";
+
 .container {
   height: 100%;
   display: flex;
@@ -11,7 +15,7 @@
 
 .bg {
     background-color: #e6e2e7;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 page{

@@ -5,8 +5,7 @@
 
     <!-- 地图调用 -->
     <!-- regionChange===地图视野变化执行 -->
-    <map class="map" latitude="{{latitude}}" longitude="{{longitude}}" show-location="true" bindregionchange="regionChange" style="height:{{b_width}}" markers="{{markers}}" show-location
-    bindmarkertap="markertap" show-compass	show-scale	> 
+    <map class="map" latitude="{{mapData.latitude}}" longitude="{{mapData.longitude}}" show-location="true" bindregionchange="regionChange" style="height:{{b_width}}" markers="{{markers}}" show-location bindmarkertap="markertap" show-compass show-scale>
 
         <!-- 坐标中心点 -->
         <view class="out_localCenter">
@@ -24,10 +23,26 @@
     <view class="bottom">
         <view class="text">
             <view class="fir">
-                {{find_title}}
+                {{btmData.find_title}}
+
+                <text class="boxStatus">
+                
+                    <block wx:if='{{btmData.status===1}}'>
+                        <text class="sucBox">可以投递</text>
+                </block>
+
+                <block wx:elif='{{btmData.status===2}}'>
+                    <text class="faiBox">暂停投递</text>
+                </block>
+
+                <block wx:else>
+                    <text></text>
+                </block>
+
+                </text>
             </view>
             <view class="sec">
-                {{find_add}}
+                {{btmData.find_add}}
             </view>
         </view>
         <!-- 去那里入口按钮 -->

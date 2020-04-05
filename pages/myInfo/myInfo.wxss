@@ -1,6 +1,7 @@
 .bg {
-    background-color: #e6e2e7;
-    height: 100vh;
+    /* background-color: #e6e2e7; */
+    background-color: #f2f6f9;
+    height: auto;
 }
 
 .header {
@@ -52,29 +53,38 @@
     padding:10rpx 0 ;
 }
 
+
+
+/* 信息栏 */
+
 .content{
     display: block;
     margin: 0 auto;
     margin-top: 25rpx;
     background-color: #ffffff;
-    width: 95vw;
-    border: 1px solid #e6e2e7;
+    width: 92vw;
+    /* border: 1px solid #e6e2e7; */
     border-radius: 15rpx;
 }
 
 .in-content{
     width: 85vw;
     margin: 0 auto;
-    margin-top: 10rpx;
+    /* margin-top: 10rpx; */
     background-color: #ffffff;
 }
 
 .item{
     display: flex;
     padding: 30rpx 0 ;
+    padding-left: 80rpx;
 
     border-bottom: #e4e4e4 1px solid;
 
+}
+
+.item:last-child{
+    border: 0;
 }
 
 .item text{
@@ -82,7 +92,7 @@
 }
 
 .item>view:first-child{
-    flex: 3;    
+    /* flex: 3;     */
     font-size: 35rpx;
 }
 
@@ -90,8 +100,101 @@
     flex: 7;
     font-size: 27rpx;
     text-align: right;
+    align-self: center;
     
 }
+
+.content-title{
+    color: gray;
+    margin: 40rpx 0 20rpx 5vw;
+    font-weight: bold;
+    font-size: 32rpx;
+}
+
+/* 信息栏icon */
+
+.icon1::before{
+    position: absolute;
+    content: '\e62d';
+    left: 65rpx;
+    font-size: 45rpx;
+    color: #ff8234;
+}
+
+.icon2::before{
+    position: absolute;
+    content: "\e658";
+    left: 65rpx;
+    font-size: 45rpx;
+    color: #3dfb4a;
+}
+
+.icon3::before{
+    position: absolute;
+    content: "\e60d";
+    left: 65rpx;
+    font-size: 45rpx;
+    color: #ffbd27;
+}
+.icon4::before{
+    position: absolute;
+    content: "\e60e";
+    left: 65rpx;
+    font-size: 45rpx;
+    color: #cb894d;
+}
+.icon5::before{
+    position: absolute;
+    content: "\e610";
+    left: 65rpx;
+    font-size: 45rpx;
+    color: #13b8e2;
+}
+.icon6::before{
+    position: absolute;
+    content: "\e62e";
+    left: 65rpx;
+    font-size: 45rpx;
+    color: #ff6e14;
+}
+
+.icon7::before{
+    position: absolute;
+    content: "\e61a";
+    left: 65rpx;
+    font-size: 45rpx;
+    color: #0474f1;
+}
+
+.arrow{
+    position: relative;
+    height: 44rpx;
+}
+
+.arrow::after{
+    content: "\e637";
+    color: #dbdbdb;
+    font-size: 80rpx;
+    /* font-weight: bold; */
+    position: absolute;
+    right: 0;
+    bottom: -20rpx;
+}
+
+
+.arrow text{
+    /* position: absolute; */
+    display: inline-block;
+    padding-right: 70rpx;
+    line-height: 44rpx;
+    
+}
+
+
+
+
+
+/* 扫码 */
 
 .scan {
     margin-top: 45rpx;

@@ -1,5 +1,3 @@
-
-
 .header {
     width: 100vw;
     background-color: #00a0ae;
@@ -70,13 +68,18 @@
     margin-top: 30rpx;
 }
 
-.ad image{
+.ad image {
     width: 100vw;
 }
 
 .scan {
     text-align: center;
-    margin-top: 30vh;
+    /* margin-top: 10vh; */
+    position: fixed;
+    bottom: 150rpx;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
 }
 
 .btn {
@@ -91,12 +94,19 @@
     font-size: 45rpx;
 }
 
-.clean_bottom{
+.clean_bottom {
     height: 120rpx;
 }
 
+/* 底部按钮 */
+
+.fixed {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+}
+
 .bottom {
-    /* position: fixed; */
     display: flex;
     /* 对齐方式 */
     height: 120rpx;
@@ -106,23 +116,102 @@
     background-color: white;
 }
 
-.bottom view{
+.bottom>view {
+    position: relative;
     width: 100%;
     height: 100%;
     text-align: center;
-    /* background-color: black; */
 }
 
-.bottom:before{
+.bottom>view::after {
     content: "|";
     position: absolute;
     color: #e6e2e7;
     font-size: 60rpx;
-    left: 50vw;
+    /* left: 50vw; */
+    right: 0;
 }
 
-.fixed{
-    position: fixed;
+.bottom>view:last-child:after {
+    content: "";
+}
+
+/* 文章 */
+
+.article {
+    width: 92vw;
+    margin: 0 auto;
+}
+
+.article-top {
+    display: flex;
+    margin: 40rpx 0 20rpx 0;
+    align-items: center;
+}
+
+.article-top>view:nth-child(1) {
+    font-size: 38rpx;
+    font-weight: bold;
+}
+
+.article-top>view:nth-child(2) {
+    margin-left: auto;
+    font-size: 28rpx;
+    padding-right: 30rpx;
+}
+
+.article-top>view:nth-child(2)::after {
+    position: relative;
+    content: "\e637";
+    left: 20rpx;
+}
+
+.article-content {
+    display: flex;
+    width: 100%;
+    background-color: white;
+    border-radius: 10rpx;
+    height: 250rpx;
+    box-sizing: border-box;
+    padding: 15rpx;
+    padding-left: 25rpx;
+}
+
+
+.article-content-text{
+    position: relative;
+    flex: 11;
+}
+
+
+.article-content-pic {
+    flex: 9;
+    height: 220rpx;
+    margin-left: 10rpx;
+}
+
+
+.article-title1{
+    font-size: 30rpx;
+    font-weight: bold;
+}
+
+
+.article-title2{
+    /* 新加 */
+    width: 88%;
+    position: absolute;
     bottom: 0;
-    width: 100vw;
+    margin-bottom: 10rpx;
+    font-size: 26rpx;
+}
+
+.article-title2::after{
+    position: absolute;
+    display: inline-block;
+    content: "\e624";
+    font-size: 36rpx;
+    right: -30rpx;
+    color: rgb(206, 206, 206);
+    transform: rotate(180deg);
 }
